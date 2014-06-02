@@ -38,7 +38,7 @@ gem 'devise'
 
 
 # file upload with paperclip
-# gem "paperclip", "~> 4.1"
+gem "paperclip", "~> 4.1"
 
 
 

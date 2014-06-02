@@ -9,8 +9,8 @@
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @idea.picture %>
+  <strong>Attachement:</strong>
+  <%= link_to 'Attachment Link', @idea.attachment.url %>
 </p>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
