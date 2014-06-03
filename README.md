@@ -1,6 +1,13 @@
 sitting_on_a_cornflake
 ======================
 
-http://guides.railsgirls.com/app/
+* bootstrapp rails 
+  http://guides.railsgirls.com/app/
 
-http://guides.railsgirls.com/devise/
+* user authentication
+  http://guides.railsgirls.com/devise/
+
+* paperclip integration 
+
+* http://robots.thoughtbot.com/how-we-test-rails-applications
+  http://robots.thoughtbot.com/rspec-integration-tests-with-capybara

@@ -40,7 +40,11 @@ gem 'devise'
 # file upload with paperclip
 gem "paperclip", "~> 4.1"
 
-
+# test
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
 
 
 
