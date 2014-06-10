@@ -43,7 +43,9 @@ gem "paperclip", "~> 4.1"
 # test
 group :development, :test do
   gem 'rspec-rails'
+  gem "factory_girl_rails"
   gem 'capybara'
+  gem "faker"
 end
 
 
