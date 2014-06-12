@@ -1,37 +1,32 @@
-feature "the signin process" do
+require "spec_helper"
 
+
+feature "Signing in" do
   background do
-    create(:user, :email => 'user@example.com', :password => 'password')
+    User.create(:email => 'tommaso@devolute.org', :password => 'tommasorails')
+  end
+
+  scenario "Signing in with correct credentials" do
     visit '/users/sign_in'
+    within("#new_user") do
+      fill_in 'user_email', :with => 'tommaso@devolute.org'
+      fill_in 'user_password', :with => 'tommasorails'
+    end
+    click_button 'Sign in'
+    visit '/'
+    expect(page).to have_content 'Logged in as'
   end
 
-  scenario "signs me in" do
-    within("#session") do
-      fill_in 'Login', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
+  given(:other_user) { User.create(:email => 'other@example.com', :password => 'rous') }
+
+  scenario "Signing in as another user" do
+    visit '/users/sign_in'
+    within("#new_user") do
+      fill_in 'user_email', :with => other_user.email
+      fill_in 'user_password', :with => other_user.password
     end
-    click_link 'Sign in'
-    expect(page).to have_content 'Success'
+    click_button 'Sign in'
+    visit '/'
+    expect(page).to have_content 'You need to sign in or sign up before continuing'
   end
-  
-  scenario 'e qui si suda'
 end
-
-
-describe 'Authentication' do
-
-  context 'signed out' do
-    it 'redirects to the sign in view' do
-      debugger
-      puts
-    end
-  end
-
-  context 'signed out' do
-    it 'redirects to the sign in view' do
-    end
-  end
-
-end
-
-
