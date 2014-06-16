@@ -3,14 +3,14 @@ require "spec_helper"
 
 feature "Signing in" do
   background do
-    User.create(:email => 'tommaso@devolute.org', :password => 'tommasorails')
+    User.create(:email => 'admin@example.com', :password => 'adminexample')
   end
 
   scenario "Signing in with correct credentials" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_email', :with => 'tommaso@devolute.org'
-      fill_in 'user_password', :with => 'tommasorails'
+      fill_in 'user_email', :with => 'admin@example.com'
+      fill_in 'user_password', :with => 'adminexample'
     end
     click_button 'Sign in'
     visit '/'
