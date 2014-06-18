@@ -1,0 +1,12 @@
+%p
+  %strong Name:
+  = @idea.name
+%p
+  %strong Description:
+  = @idea.description
+%p
+  %strong Attachement:
+  = link_to 'Attachment Link', @idea.attachment.url
+= link_to 'Edit', edit_idea_path(@idea)
+|
+\#{link_to 'Back', ideas_path}
