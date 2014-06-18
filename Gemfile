@@ -33,6 +33,12 @@ group :doc do
 end
 
 
+# haml
+gem "haml-rails"
+#  rb to haml 
+gem 'hpricot', '~> 0.8.6'
+gem 'ruby_parser', '~> 2.3.1'
+
 # devise for user authentication
 gem 'devise'
 
