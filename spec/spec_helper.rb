@@ -47,4 +47,12 @@ RSpec.configure do |config|
   # Configure Factory Girl
   config.include FactoryGirl::Syntax::Methods
   
+  # require spec helpers
+  require_relative 'support/integration_helpers'
+
+  RSpec.configure do |rspec|
+    rspec.include IntegrationHelpers
+  end
+
+
 end
