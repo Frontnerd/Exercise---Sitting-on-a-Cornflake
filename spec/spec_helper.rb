@@ -50,9 +50,7 @@ RSpec.configure do |config|
   # require spec helpers
   require_relative 'support/integration_helpers'
 
-  RSpec.configure do |rspec|
-    rspec.include IntegrationHelpers
-  end
+  config.include IntegrationHelpers
 
 
 end
