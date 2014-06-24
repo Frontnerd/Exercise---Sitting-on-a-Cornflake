@@ -5,7 +5,6 @@ describe User do
   let(:user) { create(:user) }
 
   it 'should have attributes from the factory' do
-    debugger
     expect(user.email).to be_present
     # expect(true).to be_true\
     # expect(page).to have_css('.title')

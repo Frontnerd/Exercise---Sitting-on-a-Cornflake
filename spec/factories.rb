@@ -6,9 +6,14 @@ FactoryGirl.define do
   sequence(:password) { Faker::Internet.password }
 
   # the model using defined (generated values) attributes
+#  factory :user do
+#    email { generate(:email) }
+#    password { generate(:password) }
+#  end
+  
   factory :user do
-    email { generate(:email) }
-    password { generate(:password) }
+    email { 'tommaso@devolute.org' }
+    password { 'tommasorails' }
   end
-
+  
 end

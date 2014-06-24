@@ -44,11 +44,16 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   
+  # Capybara
+  config.include Capybara::DSL
+  
   # Configure Factory Girl
   config.include FactoryGirl::Syntax::Methods
   
   # require spec helpers
   require_relative 'support/integration_helpers'
+  #selectors
+  require_relative 'support/selectors'
 
   config.include IntegrationHelpers
 

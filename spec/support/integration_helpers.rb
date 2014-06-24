@@ -1,8 +1,13 @@
+require 'spec_helper'
+
 module IntegrationHelpers
 
-  def submit_form
-    
+  def user
+    let!(:user) { FactoryGirl.create(:user) }
   end
+
+  #def submit_form
+  #end
 
   def login_with(user)
     ## THESE HAS TO CREATED AS HELPERS TOO
@@ -16,14 +21,12 @@ module IntegrationHelpers
     #describe "Signing in with correct credentials" do
       visit '/users/sign_in'
       within("#new_user") do
-        fill_in 'user_email', :with => 'tommaso@devolute.org'
-        fill_in 'user_password', :with => 'tommasorails'
+        fill_in 'user_email', :with => user.email
+        fill_in 'user_password', :with => user.password
       end
       click_button 'Sign in'
-      debugger
-      3
       visit '/'
-      expect(page).to have_content 'Logged in as'
+      expect(page).to have_content 'Logged in'
     #end
     
     

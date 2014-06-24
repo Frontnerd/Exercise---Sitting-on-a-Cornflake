@@ -18,6 +18,7 @@ tests
 ** http://rubydoc.info/github/jnicklas/capybara/master
 ** examples
 *** http://bitfluxx.com/2011/05/23/some-rspec-tips-and-best-practices.html
+*** http://testdrivenwebsites.com/2011/08/17/different-ways-of-code-reuse-in-rspec/
   
 ** using factories
 *** http://robots.thoughtbot.com/testing-your-factories-first
@@ -25,6 +26,9 @@ tests
 *** examples
 **** http://arjanvandergaag.nl/blog/factory_girl_tips.html
 **** http://arjanvandergaag.nl/blog/factory_girl_tips.html
+
+capybara triks
+* http://www.samuelmullen.com/2011/12/use-capybara-add_selector-to-simplify-finding-link/
   
   
 resourches:
