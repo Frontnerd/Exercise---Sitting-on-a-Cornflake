@@ -9,20 +9,17 @@ feature 'Idea' do
     background { login_with created_user }
 
     scenario 'I should be able to create a new idea' do
-      visit '/ideas/new'
-      within("#new_idea") do
-         fill_in 'idea_name', :with => 'fake idea name'
-         fill_in 'idea_description', :with => 'some description'
-      end
-      click_button 'Create Idea'
-      expect(page).to have_content 'Idea was successfully created.'
+      create_idea
     end
 
     scenario 'I should be able to edit a created idea' do
+      create_idea
       visit '/'
-
       within("#ideas") do 
-        find(:xpath, "//a", :text => 'Edit ').click
+        # print page.html
+        find(:xpath, "//a[@href='/ideas/1/edit']").click
+        # THIS SHOULD WORK AS WELL USING CUSTOM SELECTOS 
+        # find(:link_with_href_value, '/ideas/1/edit').click
       end
 
       expect(page).to have_content 'Editing idea'
