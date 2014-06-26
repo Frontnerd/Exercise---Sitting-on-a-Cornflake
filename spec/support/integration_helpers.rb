@@ -17,16 +17,18 @@ module IntegrationHelpers
     end
     click_button 'Sign in'
     visit '/'
+    ## TODO EXPECTATIONS WILL BE IN HE FATURE TEST FILE
     expect(page).to have_content 'Logged in'
   end
 
   def create_idea
     visit '/ideas/new'
     within("#new_idea") do
-       fill_in 'idea_name', :with => 'fake idea name'
-       fill_in 'idea_description', :with => 'some description'
+       fill_in 'idea_name', :with => "Release"
+       fill_in 'idea_description', :with => "Release Desc"
     end
     click_button 'Create Idea'
+    ## TODO EXPECTATIONS WILL BE IN HE FATURE TEST FILE
     expect(page).to have_content 'Idea was successfully created.'
   end
 

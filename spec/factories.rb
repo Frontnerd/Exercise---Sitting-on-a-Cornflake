@@ -15,5 +15,10 @@ FactoryGirl.define do
     email { 'tommaso@devolute.org' }
     password { 'tommasorails' }
   end
-  
+
+  factory :idea do
+    name { 'Release' }
+    description { 'This is my new awesome music release.' }
+  end
+
 end

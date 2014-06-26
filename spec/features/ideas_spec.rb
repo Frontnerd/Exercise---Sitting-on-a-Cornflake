@@ -12,17 +12,27 @@ feature 'Idea' do
       create_idea
     end
 
-    scenario 'I should be able to edit a created idea' do
-      create_idea
-      visit '/'
-      within("#ideas") do 
-        # print page.html
-        find(:xpath, "//a[@href='/ideas/1/edit']").click
-        # THIS SHOULD WORK AS WELL USING CUSTOM SELECTOS 
-        # find(:link_with_href_value, '/ideas/1/edit').click
+    context 'with an existing idea' do
+    
+      let!(:created_idea) { FactoryGirl.create(:idea)}
+
+      scenario 'I should be able to edit a created idea' do
+        visit '/'
+        within("#ideas") do 
+          find(:xpath, "//a[@href='/ideas/1/edit']").click
+        end
+
+        expect(page).to have_content 'Editing idea'
       end
 
-      expect(page).to have_content 'Editing idea'
+      scenario 'I should be able to delete a created idea' do
+        visit '/'
+        within("#ideas") do 
+          find(:xpath, ".//a[@data-method='delete'][1]").click
+        end
+        expect(page).to have_content 'Listing ideas'
+      end
+    
     end
 
   end
