@@ -4,11 +4,18 @@ describe User do
 
   let(:user) { create(:user) }
 
+#  describe "relations" do
+#    it "should have many ideas" do
+#      expect(described_class).to have_many(:ideas)
+#     end
+#  end
+
   it 'should have attributes from the factory' do
     expect(user.email).to be_present
     # expect(true).to be_true\
     # expect(page).to have_css('.title')
   end
+  
 end
 
 

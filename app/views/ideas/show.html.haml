@@ -10,3 +10,7 @@
 = link_to 'Edit', edit_idea_path(@idea)
 |
 \#{link_to 'Back', ideas_path}
+
+%p
+  %strong Posted By:
+  = @idea.user_id

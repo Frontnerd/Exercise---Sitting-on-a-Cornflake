@@ -14,6 +14,9 @@
         %td= idea.name
         %td= idea.description
         %td= idea.attachment
+        %td
+          Posted By:
+          = idea.user_id
         %td= link_to 'Show', idea
         %td= link_to 'Edit', edit_idea_path(idea)
         %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }

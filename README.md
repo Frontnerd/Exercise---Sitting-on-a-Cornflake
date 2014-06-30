@@ -39,4 +39,7 @@ resourches:
 * https://github.com/jnicklas/capybara
 * https://github.com/thoughtbot/factory_girl
 * https://github.com/stympy/faker
+
+model associations
+* http://guides.rubyonrails.org/association_basics.html
   
