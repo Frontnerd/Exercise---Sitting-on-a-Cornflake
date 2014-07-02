@@ -4,7 +4,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    #@ideas = Idea.all
+    @ideas = Idea.where(:user_id => current_user.email)
   end
 
   # GET /ideas/1
@@ -25,7 +26,9 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(idea_params)
-           
+    
+    @idea.user_id = current_user.email
+    
     respond_to do |format|
       if @idea.save
         format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
