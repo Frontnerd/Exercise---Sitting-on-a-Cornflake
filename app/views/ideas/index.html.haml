@@ -11,7 +11,7 @@
       %th
   %tbody
     - @ideas.each do |idea|
-      %tr
+      %tr{:id=> dom_id(idea)}
         %td= idea.name
         %td= idea.description
         %td= idea.attachment

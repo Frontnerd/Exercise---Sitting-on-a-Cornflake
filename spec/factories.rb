@@ -18,6 +18,7 @@ FactoryGirl.define do
 
   factory :idea do
     name { 'Release' }
+    user { create(:user) }
     description { 'This is my new awesome music release.' }
   end
 

@@ -7,13 +7,11 @@
 %p
   %strong Attachement:
   = link_to 'Attachment Link', @idea.attachment.url
+%p
+  %strong Posted By:
+  = @idea.user_id
+
 = link_to 'Edit', edit_idea_path(@idea)
 |
 \#{link_to 'Back', ideas_path}
 
-- debugger
-
-%p
-  %strong 
-    Posted By:
-    = @idea.user_id

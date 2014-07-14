@@ -2,6 +2,9 @@ require 'spec_helper'
 
 feature 'Idea' do
 
+  # test user relation
+  it{should belong_to(:user)}
+
   let!(:created_user) { FactoryGirl.create(:user) } # the variable created here wil works only in "before" and "it" blocks !!!
 
   context 'as user' do
@@ -14,14 +17,17 @@ feature 'Idea' do
 
     context 'with an existing idea' do
     
-      let!(:created_idea) { FactoryGirl.create(:idea)}
+      let!(:created_idea) { FactoryGirl.create(:idea, user: created_user )}
 
       scenario 'I should be able to edit a created idea' do
         visit '/'
-        within("#ideas") do 
-          find(:xpath, "//a[@href='/ideas/1/edit']").click
+        within("tr#idea_#{created_idea.id}") do 
+          #find(:xpath, "//a[@href='/ideas/1/edit']").click
+          click_link('Edit')
+
         end
 
+        expect(current_path).to eq edit_idea_path(created_id)
         expect(page).to have_content 'Editing idea'
       end
 

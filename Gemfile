@@ -53,6 +53,7 @@ group :development, :test do
   gem 'capybara'
   gem "faker"
   gem 'debugger'
+  gem 'shoulda-matchers', require: false
 end
 
 

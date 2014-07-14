@@ -17,6 +17,7 @@ tests
 * http://guides.rubyonrails.org/testing.html
 ** http://www.hiringthing.com/2012/08/17/rails-testing-factory-girl.html#sthash.tiL7W8Kl.dpbs
 ** http://rubydoc.info/github/jnicklas/capybara/master
+** http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html
 ** examples
 *** http://bitfluxx.com/2011/05/23/some-rspec-tips-and-best-practices.html
 *** http://testdrivenwebsites.com/2011/08/17/different-ways-of-code-reuse-in-rspec/
@@ -42,4 +43,5 @@ resourches:
 
 model associations
 * http://guides.rubyonrails.org/association_basics.html
+* tests: https://github.com/thoughtbot/shoulda-matchers
   
