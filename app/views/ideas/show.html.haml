@@ -1,15 +1,16 @@
-%p
-  %strong Name:
-  = @idea.name
-%p
-  %strong Description:
-  = @idea.description
-%p
-  %strong Attachement:
-  = link_to 'Attachment Link', @idea.attachment.url
-%p
-  %strong Posted By:
-  = @idea.user_id
+%ul.list-group
+  %li.list-group-item
+    %strong Name:
+    = @idea.name
+  %li.list-group-item
+    %strong Description:
+    = @idea.description
+  %li.list-group-item
+    %strong Attachement:
+    = link_to 'Attachment Link', @idea.attachment.url
+  %li.list-group-item
+    %strong Posted By:
+    = @idea.user_id
 
 = link_to 'Edit', edit_idea_path(@idea)
 |

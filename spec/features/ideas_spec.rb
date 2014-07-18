@@ -5,7 +5,7 @@ feature 'Idea' do
   # test user relation
   it{should belong_to(:user)}
 
-  let!(:created_user) { FactoryGirl.create(:user) } # the variable created here wil works only in "before" and "it" blocks !!!
+  let!(:created_user) { FactoryGirl.create(:user) } # the variable created here will works only in "before" and "it" blocks !!!
 
   context 'as user' do
 
@@ -22,12 +22,8 @@ feature 'Idea' do
       scenario 'I should be able to edit a created idea' do
         visit '/'
         within("tr#idea_#{created_idea.id}") do 
-          #find(:xpath, "//a[@href='/ideas/1/edit']").click
           click_link('Edit')
-
         end
-
-        expect(current_path).to eq edit_idea_path(created_id)
         expect(page).to have_content 'Editing idea'
       end
 

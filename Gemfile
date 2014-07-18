@@ -33,15 +33,24 @@ group :doc do
 end
 
 
+
+
+# Devolute view builder 
+gem "devolute-rails-view_builder", ">= 0.5.26", :git => "git@git.devolute.org:devolute-rails-view_builder.git"
+
 # haml
 gem "haml-rails"
 #  rb to haml 
 gem 'hpricot', '~> 0.8.6'
 gem 'ruby_parser', '~> 2.3.1'
 
+## TWEETER BOOTSTRAP
+gem 'compass'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'autoprefixer-rails'
+
 # devise for user authentication
 gem 'devise'
-
 
 # file upload with paperclip
 gem "paperclip", "~> 4.1"
