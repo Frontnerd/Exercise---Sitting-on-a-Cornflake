@@ -1,3 +1,9 @@
+= display_for idea, :template => 'table' do |display|
+  %tr{:id=>dom_id(idea)}
+    %td= display.default(:name)
+    %td= display.default(:description)
+    %td= display.default(:attachment)
+
 %ul.list-group
   %li.list-group-item
     %strong Name:

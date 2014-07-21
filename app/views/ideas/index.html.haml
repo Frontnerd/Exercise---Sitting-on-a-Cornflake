@@ -1,5 +1,4 @@
-%h1 Listing ideas
-%table#ideas.table.table-hover
+%table.table
   %thead
     %tr
       %th Name
@@ -11,23 +10,20 @@
       %th
   %tbody
     - @ideas.each do |idea|
-      %tr{:id=> dom_id(idea)}
-        %td= idea.name
-        %td= idea.description
-        %td= idea.attachment
-        %td
-          Posted By:
-          = idea.user_id
-        %td= link_to 'Show', idea
-        %td= link_to 'Edit', edit_idea_path(idea)
-        %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
+      = display_for idea, :template => 'table' do |display|
+        %tr{:id=>dom_id(idea)}
+          %td= display.default(:name)
+          %td= display.default(:description)
+          %td= display.default(:attachment)
+          %td
+            Posted By:
+            = idea.user_id
+          %td= link_to 'Show', idea
+          %td= link_to 'Edit', edit_idea_path(idea)
+          %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Idea', new_idea_path
 
 
-= display_for @ideas, :template => 'table' do |display|
-  -# debugger
-  = display.default(:name)
-  = display.default(:description)
-  = display.default(:attachment)
+
 
