@@ -1,22 +1,11 @@
-= display_for idea, :template => 'table' do |display|
-  %tr{:id=>dom_id(idea)}
-    %td= display.default(:name)
-    %td= display.default(:description)
-    %td= display.default(:attachment)
-
-%ul.list-group
-  %li.list-group-item
-    %strong Name:
-    = @idea.name
-  %li.list-group-item
-    %strong Description:
-    = @idea.description
-  %li.list-group-item
-    %strong Attachement:
-    = link_to 'Attachment Link', @idea.attachment.url
-  %li.list-group-item
-    %strong Posted By:
-    = @idea.user_id
+= display_for @idea do |display|
+  %ul.list-group{:id=>dom_id(@idea)}
+    %li.list-group-item= display.default(:name)
+    %li.list-group-item= display.default(:description)
+    %li.list-group-item= display.default(:attachment)
+    %li.list-group-item
+      %strong Posted By:
+      = @idea.user_id
 
 = link_to 'Edit', edit_idea_path(@idea)
 |

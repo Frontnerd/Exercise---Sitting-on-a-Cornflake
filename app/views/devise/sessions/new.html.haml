@@ -1,16 +1,10 @@
-%h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
+  = form.email_field_fieldset :email, :autofocus => true, :class => "form-control"
+  = form.password_field_fieldset :password, :class => "form-control"
   - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign in"
+    .checkbox
+      = form.check_box_fieldset :remember_me, :class => "checkbox"
+  = form.submit "Sign in", :class => 'btn btn-default'
+
 = render "devise/shared/links"
+

@@ -1,4 +1,17 @@
 // sitting on a cornflake
 
 
+$label-color: black;
+
 @import "bootstrap";
+
+
+
+
+.form {
+  .fieldset {
+    @extend .form-group;
+  }
+}
+
+
