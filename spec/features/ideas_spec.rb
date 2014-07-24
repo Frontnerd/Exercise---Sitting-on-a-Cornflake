@@ -29,7 +29,7 @@ feature 'Idea' do
 
       scenario 'I should be able to delete a created idea' do
         visit '/'
-        within("#ideas") do 
+        within("#ideas") do
           find(:xpath, ".//a[@data-method='delete'][1]").click
         end
         expect(page).to have_content 'Listing ideas'

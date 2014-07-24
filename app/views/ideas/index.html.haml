@@ -1,4 +1,5 @@
-%table.table
+%h1 Listing ideas
+%table#ideas.table
   %thead
     %tr
       %th Name
@@ -23,7 +24,3 @@
           %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Idea', new_idea_path
-
-
-
-

@@ -16,7 +16,7 @@ feature "Signing up" do
         fill_in 'user_email', :with => 'admin@example.com'
         fill_in 'user_password', :with => 'adminexample'
       end
-      click_button 'Sign up'
+      click_button 'Create User'
       expect(page).to have_content 'Password confirmation doesn'
     end
   end
