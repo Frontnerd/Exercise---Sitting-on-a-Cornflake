@@ -14,4 +14,8 @@ $label-color: black;
   }
 }
 
+.form_error {
+  @extend .alert;
+  @extend .alert-danger;
+}
 
