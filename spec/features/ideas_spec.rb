@@ -16,8 +16,8 @@ feature 'Idea' do
     end
 
     context 'with an existing idea' do
-    
-      let!(:created_idea) { FactoryGirl.create(:idea, user: created_user )}
+
+      let!(:created_idea) { FactoryGirl.create(:idea, user: created_user)}
 
       scenario 'I should be able to edit a created idea' do
         visit '/'

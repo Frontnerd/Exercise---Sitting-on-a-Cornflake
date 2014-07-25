@@ -26,6 +26,7 @@ module IntegrationHelpers
     within("#new_idea") do
        fill_in 'idea_name', :with => "Release"
        fill_in 'idea_description', :with => "Release Desc"
+       attach_file('idea_attachment', 'spec/fixtures/carbonio.mp3')
     end
     click_button 'Create Idea'
     ## TODO EXPECTATIONS WILL BE IN HE FATURE TEST FILE
