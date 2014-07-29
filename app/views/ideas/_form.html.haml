@@ -2,4 +2,5 @@
   = form.text_field_fieldset :name, :class => "form-control"
   = form.text_area_fieldset :description, :class => "form-control"
   = form.file_field_fieldset :attachment, :class => "form-control"
+  = form.check_box_fieldset :is_public, {checked: false, checked_value: "true", unchecked_value: "false"}
   = form.submit :class => 'btn btn-default'

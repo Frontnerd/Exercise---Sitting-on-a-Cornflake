@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630081237) do
+ActiveRecord::Schema.define(version: 20140729070318) do
 
   create_table "ideas", force: true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140630081237) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "user_id"
+    t.string   "is_public"
   end
 
   create_table "users", force: true do |t|

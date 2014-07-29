@@ -6,7 +6,8 @@
     %li.list-group-item
       %strong Posted By:
       = @idea.user_id
-
+    %li.list-group-item= display.default(:is_public)
+    
 = link_to 'Edit', edit_idea_path(@idea)
 |
 \#{link_to 'Back', ideas_path}
