@@ -31,17 +31,30 @@ tests
 **** http://arjanvandergaag.nl/blog/factory_girl_tips.html
 **** http://arjanvandergaag.nl/blog/factory_girl_tips.html
 
-capybara triks
+capybara tricks
+
 * http://www.samuelmullen.com/2011/12/use-capybara-add_selector-to-simplify-finding-link/
-  
-  
+
 resourches:
 
 * https://github.com/jnicklas/capybara
 * https://github.com/thoughtbot/factory_girl
 * https://github.com/stympy/faker
+* https://github.com/apneadiving/Google-Maps-for-Rails
+* https://github.com/alexreisner/geocoder
 
 model associations
+
 * http://guides.rubyonrails.org/association_basics.html
 * tests: https://github.com/thoughtbot/shoulda-matchers
-  
+
+really helpfull
+
+* QUERY POSTS http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html
+
+
+
+
+
+
+

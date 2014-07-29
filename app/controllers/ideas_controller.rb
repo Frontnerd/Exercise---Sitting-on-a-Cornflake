@@ -4,14 +4,21 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
+    # if logged in show only current user Ideas
+    # if logged out show all public Ideas
+    if current_user.present?
+      @ideas = Idea.where(:user_id => current_user.id)
+    else
+      @ideas = Idea.where(:is_public => 1)
+    end
     #@ideas = Idea.all
-    # show only current user Ideas
-    @ideas = Idea.where(:user_id => current_user.id)
+    #debugger
   end
 
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+
   end
 
   # GET /ideas/new
@@ -27,7 +34,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(idea_params)
-
+    
     @idea.user_id = current_user.id
 
     respond_to do |format|

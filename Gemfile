@@ -61,6 +61,11 @@ gem 'devise'
 # file upload with paperclip
 gem "paperclip", "~> 4.1"
 
+# google maps
+gem 'underscore-rails'
+gem 'gmaps4rails'
+gem "geocoder"
+
 # test
 group :development, :test do
   gem 'rspec-rails'

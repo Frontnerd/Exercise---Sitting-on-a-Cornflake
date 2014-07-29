@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception 
   
   # force user redirect to login if not logged in
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  # Commented cause we need to show Ideas to Public
 end
