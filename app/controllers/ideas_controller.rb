@@ -1,6 +1,9 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
+
+
+
   # GET /ideas
   # GET /ideas.json
   def index
@@ -12,13 +15,23 @@ class IdeasController < ApplicationController
       @ideas = Idea.where(:is_public => 1)
     end
     #@ideas = Idea.all
-    #debugger
+
+
+    @ideas = Idea.all
+    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
+      marker.lat idea.latitude
+      marker.lng idea.longitude
+    end
   end
 
   # GET /ideas/1
   # GET /ideas/1.json
   def show
-
+    @ideas = Idea.all
+    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
+      marker.lat idea.latitude
+      marker.lng idea.longitude
+    end
   end
 
   # GET /ideas/new
@@ -34,7 +47,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(idea_params)
-    
+
     @idea.user_id = current_user.id
 
     respond_to do |format|
@@ -80,6 +93,6 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:name, :description, :attachment, :user_id, :is_public)
+      params.require(:idea).permit(:name, :description, :attachment, :user_id, :is_public, :address)
     end
 end

@@ -42,6 +42,7 @@ resourches:
 * https://github.com/stympy/faker
 * https://github.com/apneadiving/Google-Maps-for-Rails
 * https://github.com/alexreisner/geocoder
+* http://www.rubygeocoder.com/
 
 model associations
 

@@ -1,6 +1,23 @@
 %h1 Listing ideas
+
+
+-# debugger
+
+:javascript
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(#{@hash.to_json});
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  
+
 %div{style: "width: 800px;"}
   #map{style: "width: 800px; height: 400px;"}
+
+
+
+
 %table#ideas.table
   %thead
     %tr
@@ -9,6 +26,7 @@
       %th Picture
       %th Creator
       %th Public
+      %th Address
       %th Actions
       %th
       %th
@@ -22,6 +40,7 @@
           %td= display.default(:attachment)
           %td= idea.user_id
           %td= display.default(:is_public)
+          %td= display.default(:address)
           %td= link_to 'Show', idea
           %td= link_to 'Edit', edit_idea_path(idea)
           %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
