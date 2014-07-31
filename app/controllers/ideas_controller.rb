@@ -1,24 +1,22 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
-
-
-
   # GET /ideas
   # GET /ideas.json
   def index
     # if logged in show only current user Ideas
+    
     # if logged out show all public Ideas
+
     if current_user.present?
-      @ideas = Idea.where(:user_id => current_user.id)
+      @private_ideas = Idea.where(:user_id => current_user.id)
+      @ideas = @private_ideas
     else
-      @ideas = Idea.where(:is_public => 1)
+      @public_ideas = Idea.where(:is_public => 1)
+      @ideas = @public_ideas
     end
-    #@ideas = Idea.all
-
-
-    @ideas = Idea.all
-    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
+    # google maps arrai of public Ideas
+    @hash = Gmaps4rails.build_markers(@public_ideas) do |idea, marker|
       marker.lat idea.latitude
       marker.lng idea.longitude
     end
@@ -27,11 +25,6 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
-    @ideas = Idea.all
-    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
-      marker.lat idea.latitude
-      marker.lng idea.longitude
-    end
   end
 
   # GET /ideas/new

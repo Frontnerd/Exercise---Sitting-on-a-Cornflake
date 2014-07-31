@@ -1,7 +1,9 @@
 // sitting on a cornflake
 
-
 $label-color: black;
+
+$btn-default-bg: #5cb85c;
+
 
 @import "bootstrap";
 
@@ -17,5 +19,14 @@ $label-color: black;
 .form_error {
   @extend .alert;
   @extend .alert-danger;
+}
+
+input[type="file"] {
+  height: auto
+}
+
+form {
+  padding: 40px;
+  background: #eee;
 }
 

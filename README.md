@@ -52,6 +52,7 @@ model associations
 really helpfull
 
 * QUERY POSTS http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html
+* http://guides.rubyonrails.org/v3.2.18/active_record_querying.html
 
 
 

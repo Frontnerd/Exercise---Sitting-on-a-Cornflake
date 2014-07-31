@@ -5,7 +5,7 @@
   - if devise_mapping.rememberable?
     .checkbox
       = form.check_box_fieldset :remember_me, :class => "checkbox"
-  = form.submit "Sign in", :class => 'btn btn-default'
+  = form.submit "Sign in", :class => 'form-control btn btn-default'
 
 = render "devise/shared/links"
 
