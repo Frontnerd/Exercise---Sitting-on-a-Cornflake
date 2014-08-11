@@ -1,21 +1,7 @@
 %h1 Listing ideas
 
-
--# debugger
-
-:javascript
-  handler = Gmaps.build('Google');
-  console.log(Gmaps);
-  console.log(#{@hash.to_json})
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(#{@hash.to_json});
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
-  
-
 %div{style: "width: 100%;"}
-  #map{style: "width: 100%; height: 400px;margin-bottom: 20px"}
+  #all_ideas_map{style: "width: 100%; height: 400px;margin-bottom: 20px"}
 
 %table#ideas.table
   %thead
@@ -45,3 +31,14 @@
           %td= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Idea', new_idea_path
+
+
+
+:javascript
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'all_ideas_map'}}, function(){
+    markers = handler.addMarkers(#{@hash.to_json});
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+

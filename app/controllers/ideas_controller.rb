@@ -16,7 +16,7 @@ class IdeasController < ApplicationController
       @ideas = @public_ideas
     end
     # google maps arrai of public Ideas
-    @hash = Gmaps4rails.build_markers(@public_ideas) do |idea, marker|
+    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
       marker.lat idea.latitude
       marker.lng idea.longitude
     end
