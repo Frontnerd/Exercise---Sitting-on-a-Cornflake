@@ -2,9 +2,6 @@ require 'spec_helper'
 
 feature 'Idea' do
 
-  # test user relation
-  it{should belong_to(:user)}
-
   let!(:created_user) { FactoryGirl.create(:user) } # the variable created here will works only in "before" and "it" blocks !!!
 
   context 'as user' do

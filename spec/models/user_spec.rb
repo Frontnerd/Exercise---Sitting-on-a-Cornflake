@@ -12,7 +12,7 @@ describe User do
 
   describe "relations" do
     it "should have many ideas" do
-      expect(User).to have_many(:ideas)
+      should have_many(:ideas)
      end
   end
 
