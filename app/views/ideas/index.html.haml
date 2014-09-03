@@ -23,7 +23,10 @@
           %td= display.default(:name)
           %td= display.default(:description)
           %td= display.default(:attachment)
-          %td= idea.user_id
+          %td
+            = idea.user_id
+            -# HERE TO FIX COUSE I NEED TO SHOW THE USER.AVATAR OF ALLL IDEAS
+            = display.default(:avatar)
           %td= display.default(:is_public)
           %td= display.default(:address)
           %td= link_to 'Show', idea

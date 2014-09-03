@@ -17,6 +17,7 @@
         %p.alert.alert-danger= alert
       %p.well
         - if user_signed_in?
+          = image_tag(current_user.avatar.url)
           Logged in as
           = succeed "." do
             %strong= current_user.email

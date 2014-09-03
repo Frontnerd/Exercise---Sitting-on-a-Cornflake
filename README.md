@@ -11,7 +11,11 @@ paperclip integration
 
 * http://robots.thoughtbot.com/how-we-test-rails-applications
 * http://robots.thoughtbot.com/rspec-integration-tests-with-capybara
-  
+
+CarrierWave (devise avatars)
+
+* https://github.com/carrierwaveuploader/carrierwave
+
 tests
 
 * http://guides.rubyonrails.org/testing.html

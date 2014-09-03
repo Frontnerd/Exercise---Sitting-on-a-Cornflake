@@ -58,6 +58,10 @@ gem 'autoprefixer-rails'
 # devise for user authentication
 gem 'devise'
 
+# for user avatar
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
+
 # file upload with paperclip
 gem "paperclip", "~> 4.1"
 
