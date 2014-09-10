@@ -4,8 +4,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
+
     # if logged in show only current user Ideas
-    
     # if logged out show all public Ideas
 
     if current_user.present?
@@ -42,7 +42,6 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
 
     @idea.user_id = current_user.id
-    #@idea.user_avatar = idea.user_avatar
 
     respond_to do |format|
       if @idea.save
@@ -87,6 +86,6 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:name, :description, :attachment, :user_id, :user_avatar, :is_public, :address)
+      params.require(:idea).permit(:name, :description, :attachment, :user_id, :is_public, :address)
     end
 end
