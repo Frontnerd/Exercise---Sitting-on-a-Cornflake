@@ -54,6 +54,7 @@ gem 'ruby_parser', '~> 2.3.1'
 gem 'compass'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'autoprefixer-rails'
+gem 'foundation-rails'
 
 # devise for user authentication
 gem 'devise'

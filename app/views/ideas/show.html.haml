@@ -17,10 +17,11 @@
       %br
       = display.default(:longitude)
     %li.list-group-item= display.default(:is_public)
-    
-= link_to 'Edit', edit_idea_path(@idea)
-|
-\#{link_to 'Back', ideas_path}
+
+.action-links
+  = link_to 'Edit', edit_idea_path(@idea)
+  |
+  \#{link_to 'Back', ideas_path}
 
 
 :javascript

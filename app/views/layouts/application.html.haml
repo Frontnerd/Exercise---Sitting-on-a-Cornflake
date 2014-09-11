@@ -7,6 +7,8 @@
     %script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
     %script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "vendor/modernizr"
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     = csrf_meta_tags
   %body
     .container
@@ -21,11 +23,11 @@
           Logged in as
           = succeed "." do
             %strong= current_user.email
-          = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-          |
-          \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
+          .action-links
+            = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+            \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
         - else
-          = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-          |
-          \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+          .action-links
+            = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+            \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
         = yield

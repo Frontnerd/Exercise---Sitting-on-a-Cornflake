@@ -7,8 +7,9 @@ $border-radius-base:        0px;
 $border-radius-large:       0px;
 $border-radius-small:       0px;
 
-@import "bootstrap";
-
+//@import "bootstrap";
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
 
 
 
@@ -32,3 +33,7 @@ form {
   background: #eee;
 }
 
+.action-links a,
+input[type="submit"] {
+  @extend .button;
+}

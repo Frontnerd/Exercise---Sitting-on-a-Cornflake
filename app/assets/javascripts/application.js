@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require foundation
 //= require_tree .
+$(document).foundation();
