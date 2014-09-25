@@ -14,13 +14,14 @@ feature "Signing in" do
 
   scenario "Signing in with correct credentials" do
     visit '/users/sign_in'
+    - debugger
     within("#new_user") do
       fill_in 'user_email', :with => user.email
       fill_in 'user_password', :with => user.password
     end
     click_button 'Sign in'
     visit '/'
-    expect(page).to have_content 'Logged in as'
+    expect(page).to have_content 'Logged in'
   end
 
 
