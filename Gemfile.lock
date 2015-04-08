@@ -140,6 +140,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.18.1)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   paperclip (~> 4.1)
+  pg
   rails!
   rmagick (= 2.13.2)
   rspec-rails
