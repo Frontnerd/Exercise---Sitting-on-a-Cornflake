@@ -79,8 +79,12 @@ group :development, :test do
 
 end
 
+# HEROKU DEPLOY
 group :production do 
   gem 'pg' 
+  gem 'underscore-rails'
+  gem "geocoder"
+  gem 'gmaps4rails'
 end
 
 
