@@ -1,7 +1,17 @@
 = form_for(@idea, :html => { :multipart => true, :class => "form" }) do |form|
-  = form.text_field_fieldset :name, :class => "form-control"
-  = form.text_area_fieldset :description, :class => "form-control"
-  = form.file_field_fieldset :attachment, :class => "form-control"
-  = form.text_field_fieldset :address, :class => "form-control"
-  = form.check_box_fieldset :is_public, {checked: true, checked_value: "true", unchecked_value: "false"}
+  = form.label :name
+  = form.text_field :name, :class => "form-control"
+
+  = form.label :description
+  = form.text_area :description, :class => "form-control"
+
+  = form.label :attachment
+  = form.file_field :attachment, :class => "form-control"
+
+  = form.label :address
+  = form.text_field :address, :class => "form-control"
+
+  = form.label :is_public
+  = form.check_box :is_public, {checked: true, checked_value: "true", unchecked_value: "false"}
+
   = form.submit :class => 'form-control btn btn-default'

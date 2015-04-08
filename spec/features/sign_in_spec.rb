@@ -10,18 +10,16 @@ require "spec_helper"
 
 feature "Signing in" do
 
-  given(:user) { User.create(:email => 'admin@example.com', :password => 'adminexample') }
+  let!(:user) { create :user }
 
   scenario "Signing in with correct credentials" do
     visit '/users/sign_in'
-    - debugger
     within("#new_user") do
       fill_in 'user_email', :with => user.email
       fill_in 'user_password', :with => user.password
     end
     click_button 'Sign in'
-    visit '/'
-    expect(page).to have_content 'Logged in'
+    expect(page).to have_content 'Signed in successfully.'
   end
 
 

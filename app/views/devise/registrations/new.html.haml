@@ -1,9 +1,21 @@
 %h2 Sign up
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :multipart => true) do |form|
-  = form.email_field_fieldset :email, :autofocus => true, :class => "form-control"
-  = form.password_field_fieldset :password, :class => "form-control"
-  = form.password_field_fieldset :password_confirmation, :class => "form-control"
-  = form.file_field_fieldset :avatar, :class => "form-control"
+
+  = devise_error_messages!
+
+  = form.label :email
+  = form.email_field :email, :autofocus => true, :class => "form-control"
+  
+  = form.label :password
+  = form.password_field :password, :class => "form-control"
+  
+  = form.label :password_confirmation
+  = form.password_field :password_confirmation, :class => "form-control"
+  
+  = form.label :avatar
+  = form.file_field :avatar, :class => "form-control"
+  
+  = form.label :avatar_cache
   = form.hidden_field :avatar_cache, :class => "form-control"
   = form.submit :class => 'form-control btn btn-default'
 

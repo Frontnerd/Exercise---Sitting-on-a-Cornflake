@@ -36,14 +36,6 @@ group :doc do
 end
 
 
-
-
-# Devolute view builder 
-gem "devolute-rails-view_builder", ">= 0.5.26", :git => "git@git.devolute.org:devolute-rails-view_builder.git"
-# Devolute form builder 
-gem "dynamic_form"
-gem "devolute-rails-form_builder", ">= 0.2.12", :git => "git@git.devolute.org:devolute-rails-formbuilder", :branch => "1728_rails_4_upgrade"
-
 # haml
 gem "haml-rails"
 #  rb to haml 

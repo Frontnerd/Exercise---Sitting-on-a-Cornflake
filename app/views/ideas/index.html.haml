@@ -1,3 +1,6 @@
+.action-links
+  = link_to 'New Idea', new_idea_path
+
 %h1 Listing ideas
 
 %div{style: "width: 100%;"}
@@ -17,29 +20,25 @@
       %th
       %th
   %tbody
-    - @ideas.each do |idea|
-      = display_for idea, :template => 'table' do |display|
-        %tr{:id=>dom_id(idea)}
-          %td= display.default(:name)
-          %td= display.default(:description)
-          %td= display.default(:attachment)
-          %td
-            %img{:src => idea.user.try(:avatar)}
-            = idea.user_id
-          %td= display.default(:is_public)
-          %td= display.default(:address)
-          %td
-            %span.action-links
-              = link_to 'Show', idea
-          %td
-            %span.action-links
-              = link_to 'Edit', edit_idea_path(idea)
-          %td
-            %span.action-links
-              = link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }
-
-.action-links
-  = link_to 'New Idea', new_idea_path
+    - @ideas.each do |display|
+      %tr{:id=>dom_id(display)}
+        %td= display.name
+        %td= display.description
+        %td= display.attachment
+        %td
+          %img{:src => display.user.try(:avatar)}
+          = display.user_id
+        %td= display.is_public
+        %td= display.address
+        %td
+          %span.action-links
+            = link_to 'Show', display
+        %td
+          %span.action-links
+            = link_to 'Edit', edit_idea_path(display)
+        %td
+          %span.action-links
+            = link_to 'Destroy', display, method: :delete, data: { confirm: 'Are you sure?' }
 
 
 

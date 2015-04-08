@@ -10,6 +10,7 @@ FactoryGirl.define do
   factory :user do
     email { 'tommaso@devolute.org' }
     password { 'tommasorails' }
+    password_confirmation { 'tommasorails' }
     avatar { File.new("#{Rails.root}/spec/fixtures/missing.jpg") }
   end
 

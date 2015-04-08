@@ -12,12 +12,14 @@
     = csrf_meta_tags
   %body
     .container
-      %h1 SittingOnACornflake
-      - if notice
-        %p.alert.alert-success= notice
-      - if alert
-        %p.alert.alert-danger= alert
-      %p.well
+      .well
+        %h1= link_to('SittingOnACornflake', '/')
+        
+        - if notice
+          %p.alert.alert-success= notice
+        - if alert
+          %p.alert.alert-danger= alert
+
         - if user_signed_in?
           = image_tag(current_user.avatar.url)
           Logged in as
@@ -30,4 +32,4 @@
           .action-links
             = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
             \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
-        = yield
+      = yield

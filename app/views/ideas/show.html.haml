@@ -1,27 +1,26 @@
-= display_for @idea do |display|
-
-  %div{style: "width: 100%;"}
-    #single_idea_map{style: "width: 100%; height: 400px;margin-bottom: 20px"}
-
-  %ul.list-group{:id=>dom_id(@idea)}
-    %li.list-group-item= display.default(:name)
-    %li.list-group-item= display.default(:description)
-    %li.list-group-item= display.default(:attachment)
-    %li.list-group-item
-      %strong Posted By:
-      = @idea.user_id
-    %li.list-group-item
-      = display.default(:address)
-      %br
-      = display.default(:latitude)
-      %br
-      = display.default(:longitude)
-    %li.list-group-item= display.default(:is_public)
-
 .action-links
   = link_to 'Edit', edit_idea_path(@idea)
   |
   \#{link_to 'Back', ideas_path}
+
+%div{style: "width: 100%;"}
+  #single_idea_map{style: "width: 100%; height: 400px;margin-bottom: 20px"}
+
+%ul.list-group{:id=>dom_id(@idea)}
+  %li.list-group-item= @idea.name
+  %li.list-group-item= @idea.description
+  %li.list-group-item= @idea.attachment
+  %li.list-group-item
+    %strong Posted By:
+    = @idea.user_id
+  %li.list-group-item
+    = @idea.address
+    %br
+    = @idea.latitude
+    %br
+    = @idea.longitude
+  %li.list-group-item= @idea.is_public
+
 
 
 :javascript

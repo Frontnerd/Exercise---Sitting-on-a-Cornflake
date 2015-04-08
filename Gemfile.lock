@@ -40,25 +40,6 @@ GIT
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
 
-GIT
-  remote: git@git.devolute.org:devolute-rails-formbuilder
-  revision: 70f401e7bab6c4843b4daeb4bb5fca395f9a1c12
-  branch: 1728_rails_4_upgrade
-  specs:
-    devolute-rails-form_builder (0.2.12)
-      i18n
-      rails (>= 3.0.3)
-
-GIT
-  remote: git@git.devolute.org:devolute-rails-view_builder.git
-  revision: f031e53013a7beecd588a5b37b5e996d0bda010c
-  specs:
-    devolute-rails-view_builder (0.5.27)
-      haml
-      i18n
-      rails (>= 3.1.0)
-      sanitize
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -98,7 +79,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
-    crass (0.2.1)
     debugger (1.6.8)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -112,7 +92,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (2.2.1)
     factory_girl (4.4.0)
@@ -155,8 +134,6 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    nokogumbo (1.1.9)
-      nokogiri
     orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
@@ -188,10 +165,6 @@ GEM
     rspec-support (3.0.3)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
-    sanitize (3.0.0)
-      crass (~> 0.2.0)
-      nokogiri (>= 1.4.4)
-      nokogumbo (= 1.1.9)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -242,9 +215,6 @@ DEPENDENCIES
   compass
   debugger
   devise
-  devolute-rails-form_builder (>= 0.2.12)!
-  devolute-rails-view_builder (>= 0.5.26)!
-  dynamic_form
   factory_girl_rails
   faker
   foundation-rails
