@@ -141,6 +141,8 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.18.1)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -228,6 +230,7 @@ DEPENDENCIES
   mini_magick
   paperclip (~> 4.1)
   pg
+  puma
   rails!
   rmagick (= 2.13.2)
   rspec-rails

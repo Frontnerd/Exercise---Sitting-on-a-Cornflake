@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # TODO: bundle with
-# ruby '2.1.2'
+# ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails', branch: '4-0-stable'
@@ -59,6 +59,10 @@ gem 'carrierwave'
 # file upload with paperclip
 gem "paperclip", "~> 4.1"
 
+# google maps
+gem 'underscore-rails'
+gem "geocoder"
+gem 'gmaps4rails'
 
 # test
 group :development, :test do
@@ -71,22 +75,14 @@ group :development, :test do
   gem "faker"
   gem 'debugger'
   gem 'shoulda-matchers', require: false
-
-  # google maps
-  gem 'underscore-rails'
-  gem "geocoder"
-  gem 'gmaps4rails'
-
 end
 
 # HEROKU DEPLOY
 group :production do 
   gem 'pg' 
-  gem 'underscore-rails'
-  gem "geocoder"
-  gem 'gmaps4rails'
 end
 
+gem 'puma'
 
 
 
